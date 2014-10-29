@@ -444,9 +444,9 @@ Vimos que para retornar um `JSON` a partir de um Controller precisamos colocar a
 
 ```
   @ResponseBody
-  @RequestMapping(value = "/mercadorias", method = RequestMethod.GET)
-  public Mercadoria buscaMercadorias(Model model){
-    return mercadoriaDao.buscaTodasMercadorias();
+  @RequestMapping(value = "/mercadorias/salvar", method = RequestMethod.POST)
+  public Mercadoria salvarMercadoria(@RequestBody Mercadoria mercadoria, Model model){
+    return mercadoriaDao.inserir(mercadoria);
   }
 ```
 No javascript a chamada ajax fica assim:
